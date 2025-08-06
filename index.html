@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quantum Ledger is an ultra-secure crypto wallet for serious investors, featuring military-grade security and instant cross-chain swaps.">
+    <title>Quantum Ledger | Secure Crypto Wallet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'quantum-dark': '#0a0e17',
+                        'quantum-darker': '#05080f',
+                        'quantum-blue': '#00a3ff',
+                        'quantum-teal': '#2dd4bf',
+                        'quantum-gray': '#1a2236'
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-quantum-darker/90 backdrop-blur-sm py-4 border-b border-quantum-gray">
+        <div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 rounded-full bg-quantum-blue flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-quantum-darker" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm9 4a1 1 0 10-2 0 1 1 0 002 0zm-2 3a1 1 0 100 2 1 1 0 000-2zm-3-3a1 1 0 10-2 0 1 1 0 002 0zm-2 3a1 1 0 100 2 1 1 0 000-2zm8 3a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <span class="text-xl font-bold text-white">Quantum<span class="quantum-gradient">Ledger</span></span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="text-quantum-blue hover:text-quantum-teal transition">Features</a>
+                <a href="#how-it-works" class="text-gray-300 hover:text-white transition">How It Works</a>
+                <a href="#security" class="text-gray-300 hover:text-white transition">Security</a>
+            </div>
+            
+            <a href="#waitlist" class="bg-gradient-to-r from-quantum-blue to-quantum-teal text-quantum-darker font-semibold px-5 py-2 rounded-lg hover:opacity-90 transition">Join Waitlist</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 md:px-8 relative overflow-hidden">
+        <div class="absolute top-20 left-1/4 w-64 h-64 bg-quantum-blue rounded-full filter blur-[100px] opacity-20"></div>
+        <div class="absolute bottom-10 right-1/4 w-48 h-48 bg-quantum-teal rounded-full filter blur-[80px] opacity-20"></div>
+        
+        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                    The <span class="quantum-gradient">Secure Future</span> of Crypto is Here
+                </h1>
+                <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto lg:mx-0">
+                    Quantum Ledger provides military-grade security, instant cross-chain swaps, and real-time portfolio analytics for serious crypto investors.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#waitlist" class="bg-gradient-to-r from-quantum-blue to-quantum-teal text-quantum-darker font-bold px-8 py-4 rounded-lg text-lg hover:opacity-90 transition transform hover:scale-105 duration-300">
+                        Join the Waitlist
+                    </a>
+                    <a href="#features" class="gradient-border text-white font-bold px-8 py-4 rounded-lg text-lg hover:text-quantum-blue transition">
+                        Explore Features
+                    </a>
+                </div>
+            </div>
+            
+            <div class="relative flex justify-center">
+                <div class="gradient-border rounded-2xl p-6 w-full max-w-md">
+                    <div class="bg-quantum-gray rounded-xl overflow-hidden">
+                        <!-- App UI Mockup -->
+                        <div class="p-5">
+                            <div class="flex justify-between items-center mb-6">
+                                <div class="text-white font-bold">Quantum Ledger</div>
+                                <div class="text-quantum-teal">$24,382.91</div>
+                            </div>
+                            
+                            <div class="space-y-4 mb-6">
+                                <div class="flex items-center justify-between p-4 gradient-border rounded-xl">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center mr-3">
+                                            <span class="font-bold">B</span>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium">Bitcoin</div>
+                                            <div class="text-sm text-gray-400">BTC</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="font-medium">0.824 BTC</div>
+                                        <div class="text-sm text-green-500">+2.4%</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center justify-between p-4 gradient-border rounded-xl">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center mr-3">
+                                            <span class="font-bold">E</span>
+                                        </div>
+                                        <div>
+                                            <div class="font-medium">Ethereum</div>
+                                            <div class="text-sm text-gray-400">ETH</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="font-medium">4.21 ETH</div>
+                                        <div class="text-sm text-red-500">-1.2%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex space-x-3">
+                                <button class="flex-1 bg-quantum-blue text-quantum-darker font-semibold py-3 rounded-lg">
+                                    Send
+                                </button>
+                                <button class="flex-1 bg-quantum-teal text-quantum-darker font-semibold py-3 rounded-lg">
+                                    Receive
+                                </button>
+                                <button class="flex-1 gradient-border text-white font-semibold py-3 rounded-lg">
+                                    Swap
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="absolute -bottom-8 -left-8 w-24 h-24 rounded-full bg-quantum-blue/20 border-2 border-quantum-blue/30 flex items-center justify-center">
+                    <div class="w-16 h-16 rounded-full bg-quantum-blue/30 border-2 border-quantum-blue/50 flex items-center justify-center">
+                        <div class="w-10 h-10 rounded-full bg-quantum-blue flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-quantum-darker" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="absolute -top-8 -right-8 w-20 h-20 rounded-full bg-quantum-teal/20 border-2 border-quantum-teal/30 flex items-center justify-center animate-float">
+                    <div class="w-12 h-12 rounded-full bg-quantum-teal/30 border-2 border-quantum-teal/50 flex items-center justify-center">
+                        <div class="w-8 h-8 rounded-full bg-quantum-teal flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-quantum-darker" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4 md:px-8 grid-pattern">
+        <div class="container mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Powerful Features for <span class="quantum-gradient">Crypto Professionals</span></h2>
+                <p class="text-xl text-gray-300">Designed for investors who demand the highest level of security and functionality</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-quantum-darker gradient-border rounded-2xl p-8 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-r from-quantum-blue to-quantum-teal flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-quantum-darker" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Military-Grade Security</h3>
+                    <p class="text-gray-300 mb-4">Quantum-resistant encryption, multi-signature wallets, and biometric authentication protect your assets from all threats.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 rounded-full bg-quantum-blue/20 flex items-center justify-center mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span>Hardware security module integration</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 rounded-full bg-quantum-blue/20 flex items-center justify-center mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span>Cold storage for long-term holdings</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 rounded-full bg-quantum-blue/20 flex items-center justify-center mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span>Self-custody with no third-party risk</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card bg-quantum-darker gradient-border rounded-2xl p-8 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-r from-quantum-blue to-quantum-teal flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-quantum-darker" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M8 5a1 1 0 100 2h5.586l-1.293 1.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L13.586 5H8zM12 15a1 1 0 100-2H6.414l1.293-1.293a1 1 0 10-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L6.414 15H12z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Instant Cross-Chain Swaps</h3>
+                    <p class="text-gray-300 mb-4">Seamlessly exchange assets across 50+ blockchains with zero slippage and minimal fees.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 rounded-full bg-quantum-blue/20 flex items-center justify-center mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span>Atomic swaps between chains</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 rounded-full bg-quantum-blue/20 flex items-center justify-center mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span>Optimized routing for best rates</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 rounded-full bg-quantum-blue/20 flex items-center justify-center mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span>No KYC required for swaps</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card bg-quantum-darker gradient-border rounded-2xl p-8 transition-all duration-300">
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-r from-quantum-blue to-quantum-teal flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-quantum-darker" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Real-Time Portfolio Analytics</h3>
+                    <p class="text-gray-300 mb-4">Advanced tools to track performance, analyze trends, and optimize your crypto investments.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 rounded-full bg-quantum-blue/20 flex items-center justify-center mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span>Customizable dashboard with 50+ metrics</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 rounded-full bg-quantum-blue/20 flex items-center justify-center mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span>Tax-loss harvesting tools</span>
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-5 h-5 rounded-full bg-quantum-blue/20 flex items-center justify-center mr-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <span>AI-powered market insights</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 px-4 md:px-8 bg-quantum-darker">
+        <div class="container mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">How <span class="quantum-gradient">Quantum Ledger</span> Works</h2>
+                <p class="text-xl text-gray-300">Get started with the world's most advanced crypto wallet in three simple steps</p>
+            </div>
+            
+            <div class="relative">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="bg-quantum-gray rounded-2xl p-8 relative">
+                        <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-quantum-blue to-quantum-teal flex items-center justify-center">
+                            <span class="font-bold text-quantum-darker">1</span>
+                        </div>
+                        <div class="w-16 h-16 rounded-xl bg-quantum-blue/10 flex items-center justify-center mb-6 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-center">Download & Setup</h3>
+                        <p class="text-gray-400 text-center">Install Quantum Ledger on your device and create your secure wallet with our guided setup process.</p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="bg-quantum-gray rounded-2xl p-8 relative">
+                        <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-quantum-blue to-quantum-teal flex items-center justify-center">
+                            <span class="font-bold text-quantum-darker">2</span>
+                        </div>
+                        <div class="w-16 h-16 rounded-xl bg-quantum-blue/10 flex items-center justify-center mb-6 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-center">Connect Assets</h3>
+                        <p class="text-gray-400 text-center">Link your exchange accounts or transfer crypto directly to your Quantum Ledger wallet.</p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="bg-quantum-gray rounded-2xl p-8 relative">
+                        <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 rounded-full bg-gradient-to-r from-quantum-blue to-quantum-teal flex items-center justify-center">
+                            <span class="font-bold text-quantum-darker">3</span>
+                        </div>
+                        <div class="w-16 h-16 rounded-xl bg-quantum-blue/10 flex items-center justify-center mb-6 mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-center">Trade & Grow</h3>
+                        <p class="text-gray-400 text-center">Start trading, staking, and managing your portfolio with our powerful tools and analytics.</p>
+                    </div>
+                </div>
+                
+                <!-- Connector lines for desktop -->
+                <div class="hidden md:block">
+                    <div class="step-connector"></div>
+                    <div class="step-connector right-0 left-auto"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section id="security" class="py-20 px-4 md:px-8 relative security-grid">
+        <div class="absolute inset-0 bg-gradient-to-b from-quantum-darker/80 to-quantum-darker z-0"></div>
+        <div class="container mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Bank-Grade Security for <span class="quantum-gradient">Digital Assets</span></h2>
+                    <p class="text-xl text-gray-200 mb-8">
+                        Quantum Ledger uses military-grade encryption and cutting-edge security protocols to protect your crypto assets against all known threats.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-5">
+                                <div class="w-12 h-12 rounded-lg bg-quantum-blue/10 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Quantum-Resistant Encryption</h3>
+                                <p class="text-gray-300">Our proprietary algorithms are designed to withstand attacks from quantum computers, future-proofing your security.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-5">
+                                <div class="w-12 h-12 rounded-lg bg-quantum-blue/10 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                                        <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Biometric Authentication</h3>
+                                <p class="text-gray-300">Secure your wallet with fingerprint, facial recognition, or hardware security keys for maximum protection.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex">
+                            <div class="flex-shrink-0 mr-5">
+                                <div class="w-12 h-12 rounded-lg bg-quantum-blue/10 flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Multi-Signature Wallets</h3>
+                                <p class="text-gray-300">Require multiple approvals for transactions, ensuring no single point of failure for your assets.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="gradient-border rounded-2xl p-1">
+                        <div class="bg-quantum-darker rounded-xl p-8">
+                            <div class="flex justify-between items-center mb-8">
+                                <h3 class="text-xl font-bold">Security Dashboard</h3>
+                                <div class="flex items-center">
+                                    <div class="w-2 h-2 rounded-full bg-green-500 mr-2 pulse-dot"></div>
+                                    <span class="text-sm text-green-500">All Systems Secure</span>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="text-gray-400">Encryption Level</span>
+                                        <span class="font-bold">Quantum</span>
+                                    </div>
+                                    <div class="w-full bg-quantum-gray h-3 rounded-full overflow-hidden">
+                                        <div class="bg-gradient-to-r from-quantum-blue to-quantum-teal h-full w-full"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="text-gray-400">Threat Detection</span>
+                                        <span class="font-bold">Active</span>
+                                    </div>
+                                    <div class="w-full bg-quantum-gray h-3 rounded-full overflow-hidden">
+                                        <div class="bg-gradient-to-r from-quantum-blue to-quantum-teal h-full w-full"></div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <div class="flex justify-between mb-2">
+                                        <span class="text-gray-400">Backup Systems</span>
+                                        <span class="font-bold">3 Locations</span>
+                                    </div>
+                                    <div class="w-full bg-quantum-gray h-3 rounded-full overflow-hidden">
+                                        <div class="bg-gradient-to-r from-quantum-blue to-quantum-teal h-full w-2/3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-10 pt-6 border-t border-quantum-gray">
+                                <div class="grid grid-cols-3 gap-4">
+                                    <div class="bg-quantum-gray rounded-lg p-4 flex flex-col items-center">
+                                        <div class="w-10 h-10 rounded-full bg-quantum-blue/10 flex items-center justify-center mb-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm text-center">2FA Enabled</span>
+                                    </div>
+                                    
+                                    <div class="bg-quantum-gray rounded-lg p-4 flex flex-col items-center">
+                                        <div class="w-10 h-10 rounded-full bg-quantum-blue/10 flex items-center justify-center mb-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm text-center">Secure Recovery</span>
+                                    </div>
+                                    
+                                    <div class="bg-quantum-gray rounded-lg p-4 flex flex-col items-center">
+                                        <div class="w-10 h-10 rounded-full bg-quantum-blue/10 flex items-center justify-center mb-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-quantum-blue" viewBox="0 0 20 20" fill="currentColor">
+                                                <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z" />
+                                            </svg>
+                                        </div>
+                                        <span class="text-sm text-center">Audit Logs</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute -bottom-6 -right-6 w-24 h-24 rounded-full bg-quantum-teal/10 border-2 border-quantum-teal/20 flex items-center justify-center">
+                        <div class="w-16 h-16 rounded-full bg-quantum-teal/20 border-2 border-quantum-teal/30 flex items-center justify-center">
+                            <div class="w-10 h-10 rounded-full bg-quantum-teal flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-quantum-darker" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="py-20 px-4 md:px-8 bg-gradient-to-br from-quantum-darker to-[#0c1325]">
+        <div class="container mx-auto max-w-4xl">
+            <div class="gradient-border rounded-2xl p-10">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Join the Quantum Revolution</h2>
+                    <p class="text-xl text-gray-200 mb-10 max-w-2xl mx-auto">
+                        Secure your spot on our exclusive waitlist and be among the first to experience the future of crypto security.
+                    </p>
+                </div>
+                
+                <div class="max-w-xl mx-auto">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="email" class="block text-gray-300 mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full bg-quantum-gray border border-quantum-gray text-white rounded-lg px-5 py-4 focus:outline-none focus:ring-2 focus:ring-quantum-blue" placeholder="your@email.com" required>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-gray-300 mb-2">Full Name</label>
+                                <input type="text" id="name" class="w-full bg-quantum-gray border border-quantum-gray text-white rounded-lg px-5 py-4 focus:outline-none focus:ring-2 focus:ring-quantum-blue" placeholder="Your Name" required>
+                            </div>
+                            
+                            <div>
+                                <label for="portfolio" class="block text-gray-300 mb-2">Portfolio Size</label>
+                                <select id="portfolio" class="w-full bg-quantum-gray border border-quantum-gray text-white rounded-lg px-5 py-4 focus:outline-none focus:ring-2 focus:ring-quantum-blue">
+                                    <option>Less than $10k</option>
+                                    <option>$10k - $50k</option>
+                                    <option>$50k - $250k</option>
+                                    <option>More than $250k</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="terms" type="checkbox" class="w-4 h-4 bg-quantum-gray border-quantum-gray rounded focus:ring-quantum-blue" required>
+                            </div>
+                            <label for="terms" class="ml-2 text-sm text-gray-300">
+                                I agree to receive updates about Quantum Ledger and understand that my data will be processed securely.
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-to-r from-quantum-blue to-quantum-teal text-quantum-darker font-bold px-8 py-4 rounded-lg text-lg hover:opacity-90 transition">
+                            Join the Waitlist
+                        </button>
+                    </form>
+                    
+                    <div class="mt-10 pt-6 border-t border-quantum-gray text-center">
+                        <p class="text-gray-300">
+                            <span class="flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-quantum-blue mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                </svg>
+                                Your data is encrypted and never shared with third parties
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-4 md:px-8 bg-quantum-darker border-t border-quantum-gray">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-6 md:mb-0">
+                    <div class="w-8 h-8 rounded-full bg-quantum-blue flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-quantum-darker" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm9 4a1 1 0 10-2 0 1 1 0 002 0zm-2 3a1 1 0 100 2 1 1 0 000-2zm-3-3a1 1 0 10-2 0 1 1 0 002 0zm-2 3a1 1 0 100 2 1 1 0 000-2zm8 3a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold text-white">Quantum<span class="quantum-gradient">Ledger</span></span>
+                </div>
+                
+                <div class="flex space-x-6 mb-6 md:mb-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Security</a>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="#" aria-label="Visit our Facebook page" class="text-gray-400 hover:text-quantum-blue transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Follow us on Twitter" class="text-gray-400 hover:text-quantum-blue transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.049-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Visit our GitHub repository" class="text-gray-400 hover:text-quantum-blue transition">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-quantum-gray text-center text-gray-400 text-sm">
+                <p>© 2023 Quantum Ledger. All rights reserved. Quantum Ledger LLC is not a bank. Cryptocurrencies are highly volatile and unregulated.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
